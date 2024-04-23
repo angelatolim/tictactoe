@@ -1,0 +1,30 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+nav {
+    border-bottom: 1px solid grey;
+    height: 52px;
+}
+
+h1 {
+    padding: 12px 0px 0px 40px;
+}
+
+.wrapper {
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.box {
+    aspect-ratio: 1;
+}
