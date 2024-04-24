@@ -1,7 +1,7 @@
 # TIC TAC TOE
 A simple game of tic tac toe.
 
-## :computer: [Click here](#) to see my live project!
+## :computer: [Click here](https://angelatolim.github.io/tictactoe/) to see my live project!
 
 ## :page_facing_up: About
 - You can play two player tic tac toe by clicking on the grid.  The counter will keep score and you can reset the game with the play again button.
