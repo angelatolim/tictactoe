@@ -15,18 +15,22 @@ tttBoxElems.forEach(box => {
     box.addEventListener('click', handleClick)
 })
 
+
+
 playAgainBtn.addEventListener('click', resetGame)
 
-// functions
+// add player function
 function handleClick(event) {
     const box = event.target
+    console.log(box);
     const index = Array.from(box.parentNode.children).indexOf(box);
 
-    // add symbol of current player
+    // add image of current player
     if (board[index] === '') {
+        box.classList.add(currentPlayer === 'X' ? 'wolverine' : 'deadpool');
+        const currentImage = currentPlayer === 'X' ? box.querySelector('.wolverine') : box.querySelector('.deadpool');
+        currentImage.classList.remove('hidden');
         board[index] = currentPlayer;
-        box.querySelector('img').src = currentPlayer === 'X' ? 'images/wolverine-removebg-preview.png' : 'images/deadpool-removebg-preview.png';
-
     // check if there is a winner
         if (checkWins(currentPlayer)) {
             // show play again button
@@ -58,8 +62,8 @@ function handleClick(event) {
 
 
 
-// determine wins
-function checkWins(boardElem) {
+// determine wins function
+function checkWins() {
     const winRows = [
         // rows
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -67,23 +71,32 @@ function checkWins(boardElem) {
         [0, 3, 6], [1, 4, 7], [2, 5, 8],
         // diagonals
         [0, 4, 8], [2, 4, 6]
-    ]
-
+    ];
     for (let row of winRows) {
-        const [a, b, c] = row
-        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-            return board[a];
-        }   
+        const [a, b, c] = row;
+        const boxA = tttBoxElems[a];
+        const boxB = tttBoxElems[b];
+        const boxC = tttBoxElems[c];
+
+        if (boxA.classList.contains(currentPlayer === 'X' ? 'wolverine' : 'deadpool') &&
+            boxB.classList.contains(currentPlayer === 'X' ? 'wolverine' : 'deadpool') &&
+            boxC.classList.contains(currentPlayer === 'X' ? 'wolverine' : 'deadpool')) {
+            return true; 
+        }
     }
-        return null;
+
+    return false;
 }
 
+// tie function
 function isTie() {
     return board.every(square => square !== '');
 }
 
+// switch between players function
 function switchPlayer() {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    console.log(currentPlayer);
 }
 
 // reset game
@@ -91,6 +104,29 @@ function resetGame() {
     // clear the board
     tttBoxElems.forEach(box => {
         box.textContent = ''
+        box.classList.remove('wolverine', 'deadpool');
+
+        const wolverineImage = document.createElement('img');
+        wolverineImage.src = 'images/wolverine-removebg-preview.png';
+        wolverineImage.alt = 'wolverine';
+        wolverineImage.classList.add('hidden');
+        box.appendChild(wolverineImage);
+
+        const deadpoolImage = document.createElement('img');
+        deadpoolImage.src = 'images/deadpool-removebg-preview.png';
+        deadpoolImage.alt = 'deadpool';
+        deadpoolImage.classList.add('hidden');
+        box.appendChild(deadpoolImage);
+        
+        const images = box.querySelectorAll('img');
+        images.forEach(image => {
+            image.classList.add('hidden');
+            if (image.src.includes('images/wolverine-removebg-preview.png')) {
+                image.classList.add('wolverine') 
+            } else {
+                image.classList.add('deadpool')
+            }
+        })
     })
     // hide the play again button
     playAgainBtn.classList.add('hidden')
@@ -100,4 +136,4 @@ function resetGame() {
     currentPlayer = 'X'
     // reset the board array
     board = ['', '', '', '', '', '', '', '', '']
-}
+    }
