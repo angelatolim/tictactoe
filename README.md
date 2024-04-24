@@ -1,5 +1,7 @@
 # TIC TAC TOE
 A simple game of tic tac toe.
+![Empty state](images/tictactoe-emptystate.png
+![Win state](images/tictactoe-winstate.png
 
 ## :computer: [Click here](https://angelatolim.github.io/tictactoe/) to see my live project!
 
@@ -19,6 +21,7 @@ $ node app.js
 ![Wireframing](images/TicTacToe_wireframe.png)
 - Flow charts of logic
 ![Logic](images/tictactoe-logic.png)
+![initial product](images/tictactoe-notheme.png)
 
 
 ## :rocket: Cool tech
