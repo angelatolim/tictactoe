@@ -15,8 +15,6 @@ tttBoxElems.forEach(box => {
     box.addEventListener('click', handleClick)
 })
 
-
-
 playAgainBtn.addEventListener('click', resetGame)
 
 // add player function
@@ -44,8 +42,7 @@ function handleClick(event) {
             } else {
                 xPlayerScoreElem.textContent = Number(xPlayerScoreElem.textContent) + 1;
             }
-            // turn winning row green
-            
+
         } else if (isTie()){
             // show play again button
             playAgainBtn.classList.remove('hidden')
@@ -77,10 +74,14 @@ function checkWins() {
         const boxA = tttBoxElems[a];
         const boxB = tttBoxElems[b];
         const boxC = tttBoxElems[c];
-
+        
         if (boxA.classList.contains(currentPlayer === 'X' ? 'wolverine' : 'deadpool') &&
-            boxB.classList.contains(currentPlayer === 'X' ? 'wolverine' : 'deadpool') &&
-            boxC.classList.contains(currentPlayer === 'X' ? 'wolverine' : 'deadpool')) {
+        boxB.classList.contains(currentPlayer === 'X' ? 'wolverine' : 'deadpool') &&
+        boxC.classList.contains(currentPlayer === 'X' ? 'wolverine' : 'deadpool')) {
+            // turn winning row green. needs fixing
+            // boxA.style.backgroundColor = 'green'
+            // boxB.style.backgroundColor = 'green'
+            // boxC.style.backgroundColor = 'green'
             return true; 
         }
     }
@@ -103,21 +104,7 @@ function switchPlayer() {
 function resetGame() {
     // clear the board
     tttBoxElems.forEach(box => {
-        box.textContent = ''
         box.classList.remove('wolverine', 'deadpool');
-
-        const wolverineImage = document.createElement('img');
-        wolverineImage.src = 'images/wolverine-removebg-preview.png';
-        wolverineImage.alt = 'wolverine';
-        wolverineImage.classList.add('hidden');
-        box.appendChild(wolverineImage);
-
-        const deadpoolImage = document.createElement('img');
-        deadpoolImage.src = 'images/deadpool-removebg-preview.png';
-        deadpoolImage.alt = 'deadpool';
-        deadpoolImage.classList.add('hidden');
-        box.appendChild(deadpoolImage);
-        
         const images = box.querySelectorAll('img');
         images.forEach(image => {
             image.classList.add('hidden');

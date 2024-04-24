@@ -29,8 +29,7 @@ $ node app.js
 ## :scream: Bugs to fix :poop:
 - Game continues to play after winner is determined
 - Align score for "tie" with the other players
-- Game unable to reset 
-- Background image tiles
+- If you play the game too many times the green background won't reset and the same character appears more than once
 
 
 ## :sob: Lessons learnt
