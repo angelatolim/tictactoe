@@ -1,7 +1,7 @@
 # TIC TAC TOE
 A simple game of tic tac toe.
-![Empty state](images/tictactoe-emptystate.png
-![Win state](images/tictactoe-winstate.png
+![Empty state](images/tictactoe-emptystate.png)
+![Win state](images/tictactoe-winstate.png)
 
 ## :computer: [Click here](https://angelatolim.github.io/tictactoe/) to see my live project!
 
