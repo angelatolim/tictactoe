@@ -22,11 +22,10 @@ function handleClick(event) {
     const box = event.target
     const index = Array.from(box.parentNode.children).indexOf(box);
 
-
     // add symbol of current player
     if (board[index] === '') {
         board[index] = currentPlayer;
-        box.textContent = currentPlayer;
+        box.querySelector('img').src = currentPlayer === 'X' ? 'images/wolverine-removebg-preview.png' : 'images/deadpool-removebg-preview.png';
 
     // check if there is a winner
         if (checkWins(currentPlayer)) {
@@ -49,7 +48,7 @@ function handleClick(event) {
             // show message
             messageElem.textContent = "It's a tie!"
             // update score
-            tieScoreElem.textContent = Number(tieScoreElem) + 1
+            tieScoreElem.textContent = Number(tieScoreElem.textContent) + 1
         } else {
             // if there is no winner, go to next player
             switchPlayer()

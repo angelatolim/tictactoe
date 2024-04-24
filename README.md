@@ -1,4 +1,4 @@
-# Project Name
+# TIC TAC TOE
 The briefest description of my cool project and why you should all use it.
 
 ## :computer: [Click here](#) to see my live project!
@@ -14,10 +14,11 @@ $ node app.js
 - Add in-app screenshots.
 
 ## :pencil2: Planning & Problem Solving
-- 
-- Add screenshots/drawings of doodles/plans during the planning phase.
-- Flow charts of app logic.
-![Wireframing](https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+- Inspiration taken from existing websites
+- Design of initial wireframe created in Figma
+![Wireframing](images/TicTacToe_wireframe.png)
+- Flow charts of logic
+
 
 ## :rocket: Cool tech
 - HTML
@@ -29,8 +30,8 @@ $ node app.js
 
 ## :scream: Bugs to fix :poop:
 - Game continues to play after winner is determined
-- Anything a LOT broken
-- Buttons to not click too many times (cause its broken :unamused:)
+- Align score for "tie" with the other players
+
 
 ## :sob: Lessons learnt
 What I would do differently if I could wind back the clock...
